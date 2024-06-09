@@ -6,10 +6,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/pinhobrunodev/go-crud/src/configuration/logger"
 	"github.com/pinhobrunodev/go-crud/src/controller/routes"
+	"github.com/pinhobrunodev/go-crud/utils"
 )
 
 func main() {
-	logger.Info("About to start application...")
+	logger.Info(utils.INIT_APPLICATION)
 	router := gin.Default()
 
 	routes.InitRoutes(&router.RouterGroup)
