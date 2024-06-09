@@ -3,15 +3,14 @@ package main
 import (
 	"log"
 
-	"github.com/pinhobrunodev/go-crud/controller/routes"
-
 	"github.com/gin-gonic/gin"
+	"github.com/pinhobrunodev/go-crud/src/controller/routes"
 )
 
 func main() {
 	router := gin.Default()
 
-	routes.InitRoutes()
+	routes.InitRoutes(&router.RouterGroup)
 
 	if err := router.Run(":8080"); err != nil {
 		log.Fatal(err)
